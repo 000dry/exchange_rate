@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["joeryansaccount@googlemail.com"]
 
   spec.summary       = "A gem that calculates exchange rates based on data published by the European Central Bank"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/josephMichaelRyan/exchange_rate"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
