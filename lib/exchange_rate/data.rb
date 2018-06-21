@@ -9,5 +9,9 @@ module ExchangeRate
     def self.write_data(data_xml)
       File.open("../../../exchange_data.xml", "w") {|f| f.write(data_xml) }
     end
+    def self.fetch_and_write
+      data_xml = self.fetch_data
+      self.write_data(data_xml)
+    end
   end
 end
