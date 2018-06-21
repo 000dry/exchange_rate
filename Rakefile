@@ -1,5 +1,6 @@
 require "bundler/gem_tasks"
 require "rake/testtask"
+require "./lib/exchange_rate.rb"
 import './lib/tasks/fetch_exchange_data.rake'
 
 Rake::TestTask.new(:test) do |t|
