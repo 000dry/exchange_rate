@@ -15,7 +15,7 @@ module ExchangeRate
 
     def self.fetch_and_write
       xml = self.fetch_data
-      self.write_data_to_file(data_xml)
+      self.write_data_to_file(xml)
     end
 
     def self.read_exchange_data
