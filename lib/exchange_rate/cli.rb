@@ -6,7 +6,7 @@ module ExchangeRate
     desc "data", "Pulls data from an online source and writes to a local file"
     def data
       ExchangeRate::Data.fetch_and_write
-      print "The exchange rates have been fetched and stored locally"
+      puts "The exchange rates have been fetched and stored locally"
     end
   end
 end
