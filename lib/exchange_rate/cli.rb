@@ -8,5 +8,12 @@ module ExchangeRate
       ExchangeRate::Data.fetch_and_write
       puts "The exchange rates have been fetched and stored locally"
     end
+
+    desc "calculate DATE BASE COUNTER",
+    "Calculates the exchange rates of two given currencies on a specified date"
+    def calculate(date, base, counter)
+      rate = ExchangeRate.at(date, base, counter)
+      puts "Exchange rate for #{base} / #{counter} on #{date}: #{rate}"
+    end
   end
 end
