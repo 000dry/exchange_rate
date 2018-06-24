@@ -41,7 +41,7 @@ CLI: ```exchange_rate rate date currency```
 
 Get the rate for a single currency on a specified date.
 
-Ruby: ```ExchangeRate.at(date, base, counter)
+Ruby: ```ExchangeRate.at(date, base, counter)```
 CLI: ```exchange_rate calculate date base counter```
 
 Call this method to calculate the exchange rate of a base and counter currency on a specified date, supplying the date, base and counter as args.
