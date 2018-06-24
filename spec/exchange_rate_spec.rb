@@ -9,6 +9,13 @@ RSpec.describe ExchangeRate::Data do
   end
 end
 
+RSpec.describe ExchangeRate::Exchange do
+  it "should be able to calculate exchange rates from a base and a counter on a specified date" do
+    result = ExchangeRate::Exchange.calculate_exchange_rate('2018-06-20', 'USD', 'JPY')
+    expect(result).to eql(0.0091)
+  end
+end
+
 RSpec.describe ExchangeRate do
   it "should be able to get a currency's rate on a specified date" do
     result = ExchangeRate.rate('2018-06-20', 'USD')
@@ -16,6 +23,6 @@ RSpec.describe ExchangeRate do
   end
   it "should be able to calculate exchange rates from a base and a counter on a specified date" do
     result = ExchangeRate.at('2018-06-20', 'USD', 'JPY')
-    expect(result).to eql("0.0091")
+    expect(result).to eql(0.0091)
   end
 end
