@@ -20,6 +20,13 @@ Or install it yourself as:
     $ gem install exchange_rate
     $ exchange_rate data
 
+##Dependencies
+
+nokogiri
+rake (~> 10.0)
+thor
+whenever
+
 ## Usage
 
 ```'require/exchange_rate'
@@ -47,13 +54,3 @@ This method should accept the same date formats as ```Date.strptime```.
 The gem contains within it a rake task lib/tasks/fetch_exchange_data.rake and a schedule file config/schedule.rb which can be read by the whenever gem to add as a cron job that regularly updates the exchange_data.xml.
 
 If the code is installed as a gem, this theoretically should be possible by unpacking the gem and running ```whenever --update``` in the root dir (though this hasn't been tested)
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
