@@ -29,7 +29,7 @@ whenever
 
 ## Usage
 
-```'require/exchange_rate'
+```'require/exchange_rate'```
 
 Ruby: ```ExchangeRate.fetch```
 CLI: ```exchange_rate data```
@@ -53,4 +53,4 @@ This method should accept the same date formats as ```Date.strptime```.
 
 The gem contains within it a rake task lib/tasks/fetch_exchange_data.rake and a schedule file config/schedule.rb which can be read by the whenever gem to add as a cron job that regularly updates the exchange_data.xml.
 
-If the code is installed as a gem, this theoretically should be possible by unpacking the gem and running ```whenever --update``` in the root dir (though this hasn't been tested)
+If the code is installed as a gem, this theoretically should be possible by unpacking the gem and running ```whenever --update-crontab``` in the root dir (though this hasn't been tested)
