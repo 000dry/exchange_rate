@@ -1,20 +1,17 @@
 require 'open-uri'
 require 'nokogiri'
 require 'date'
+require '../../environment'
 
 module ExchangeRate
   class Data
-    def dir
-      home = Dir.home
-      File.join(home, ".ssh")
-    end
     def self.fetch_data
       xml = Nokogiri::XML(open("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml"))
       xml.remove_namespaces!
     end
 
     def self.write_data_to_file(data_xml)
-      File.open(dir, "w") {|f| f.write(data_xml) }
+      File.open(Environment.path, "w") {|f| f.write(data_xml) }
     end
 
     def self.fetch_and_write
@@ -23,7 +20,7 @@ module ExchangeRate
     end
 
     def self.read_exchange_data
-      Nokogiri::XML(File.read(dir))
+      Nokogiri::XML(File.read(Environment.path))
     end
 
     def self.search_currency_by_date(date, currency)
