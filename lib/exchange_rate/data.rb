@@ -4,13 +4,42 @@ require 'date'
 
 module ExchangeRate
   class Data
+    # @source = {user: nil,
+    #   default: "http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml"}
+    # @local_store = {user: nil,
+    #   default: "/Users/Shared/Library/exchange_data.xml"}
+    #
+    # def self.source__get_user
+    #   return @source[:user]
+    # end
+    #
+    # def self.source__get_default
+    #   return @source[:default]
+    # end
+    #
+    # def self.source__set_user(url)
+    #   return @source[:user] = url
+    # end
+    #
+    # def self.local_store__get_user
+    #   return @local_store[:user]
+    # end
+    #
+    # def self.local_store__get_default
+    #   return @local_store[:default]
+    # end
+    #
+    # def self.local_store__set_user(path)
+    #   @local_store[:user] = path
+    # end
+
     def self.fetch_data
       xml = Nokogiri::XML(open("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml"))
       xml.remove_namespaces!
     end
 
     def self.write_data_to_file(data_xml)
-      File.open("/Users/shared/library/exchange_data.xml", "w") {|f| f.write(data_xml) }
+      File.open("/Users/Shared/Library/exchange_data.xml", "w") {|f| f.write(data_xml) }
     end
 
     def self.fetch_and_write
@@ -29,6 +58,5 @@ module ExchangeRate
         //Cube[@currency='" + currency + "']/@rate")
       return rate.to_s
     end
-
   end
 end
