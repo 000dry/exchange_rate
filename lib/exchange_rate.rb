@@ -9,7 +9,7 @@ module ExchangeRate
   end
 
   def self.rate(date, currency)
-    return Data.search_currency_by_date
+    return Data.search_currency_by_date(date, currency)
   end
 
   def self.at(date, base, counter)
