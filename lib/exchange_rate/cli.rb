@@ -12,7 +12,7 @@ module ExchangeRate
     desc "rate DATE CURRENCY", "Retrieves the rate of a single currency on a specified date"
     def rate(date, currency)
       rate = ExchangeRate.rate(date, currency)
-      puts = "Rate #{currency}, #{date}: #{rate}"
+      puts "Rate #{currency}, #{date}: #{rate}"
     end
 
     desc "calculate DATE BASE COUNTER",
